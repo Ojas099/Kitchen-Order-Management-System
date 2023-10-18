@@ -8,8 +8,9 @@ import socket
 item_selections = {}
 username = "5"
 
-host = "xxx.xxx.xxx.xxx"  # The IPv4 address of the server hosting computer
+host = "000.000.000.000"  # The IPv4 address of the server hosting computer
 port = 9999  # Data type should be int
+
 
 def send_order_message(item_list):
     # Establish a connection to the server
@@ -334,6 +335,13 @@ def orderSelectionScreen():
 
         # Update the canvas scroll region after adding each item
         canvas.configure(scrollregion=canvas.bbox('all'))
+
+    empty_frame = Frame(items_frame, background="#E7F9FF")
+    empty_frame.pack(fill="both")
+
+    empty_text = Label(empty_frame, background="#E7F9FF",
+                       fg="#E7F9FF", text="O", font=tkfont.Font(size=76))
+    empty_text.pack()
 
     # Create the order button
     order_button = Button(canvas, text="Place Order", font=tkfont.Font(family='Canva Sans', size=24),
